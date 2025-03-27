@@ -1,11 +1,14 @@
 from pyspark.sql import SparkSession
 import json
+import os
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     spark = SparkSession \
         .builder \
         .appName("CrimeData") \
         .getOrCreate()
+
+    os.makedirs("results", exist_ok=True)
 
     print("read dataset.csv ... ")
     
